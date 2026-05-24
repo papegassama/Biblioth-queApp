@@ -4,11 +4,7 @@ plugins {
 
 android {
     namespace = "com.example.bibliothequeapp"
-    compileSdk {
-        version = release(36) {
-            minorApiLevel = 1
-        }
-    }
+    compileSdk = 36
 
     defaultConfig {
         applicationId = "com.example.bibliothequeapp"
@@ -45,8 +41,6 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
-
-    testImplementation(libs.junit)
-    androidTestImplementation(libs.ext.junit)
-    androidTestImplementation(libs.espresso.core)
-     }
+    implementation(libs.room.runtime)
+    annotationProcessor(libs.room.compiler)
+}
